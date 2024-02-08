@@ -1,0 +1,19 @@
+html,
+body,
+#__next {
+  height: 100%;
+  min-width: 320px;
+  margin: 0;
+}
+.g-root_theme_light-hc,
+.g-root_theme_dark-hc {
+  --g-color-base-brand: #f96d4f;
+  --g-color-base-brand-hover: #f15a3a;
+  --g-color-base-selection: #feeeeb;
+  --g-color-base-selection-hover: #feded7;
+  --g-color-line-brand: #f96d4f;
+  --g-color-text-brand: #c35038;
+  --g-color-text-link: #c35038;
+  --g-color-text-link-hover: #954736;
+  --g-color-text-brand-heavy: white;
+}
