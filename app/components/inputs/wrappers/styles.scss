@@ -1,0 +1,22 @@
+$block: '.text-input-wrapper';
+
+#{$block} {
+  max-width: 300px;
+  &__info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__btn {
+    margin-right: 5px;
+  }
+
+  &__pop-up {
+    width: 95%;
+    max-width: 500px;
+    &_content {
+      padding: 10px;
+    }
+  }
+}

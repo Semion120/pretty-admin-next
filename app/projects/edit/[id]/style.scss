@@ -1,0 +1,15 @@
+$block: '.project-edit';
+
+#{$block} {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .user-inputs-mb {
+    margin-bottom: 10px;
+  }
+  .big-error {
+    margin-bottom: 15px;
+  }
+}

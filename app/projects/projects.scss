@@ -1,0 +1,35 @@
+$block: '.projects-page';
+
+#{$block} {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+
+  h1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .add-new-btn {
+      margin-left: 15px;
+    }
+  }
+
+  &__head {
+    margin-bottom: 25px;
+    .search {
+      margin-bottom: 10px;
+    }
+    .add-new-btn {
+      margin-top: 40px;
+    }
+  }
+
+  &__list {
+    max-width: 100%;
+    .loader {
+      margin-top: 100px;
+    }
+  }
+}

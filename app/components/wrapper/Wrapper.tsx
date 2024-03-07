@@ -1,10 +1,14 @@
 'use client'
 
-import React from 'react'
+import React, { useContext } from 'react'
 import block from 'bem-cn-lite'
-import { Theme, ThemeProvider } from '@gravity-ui/uikit'
+import { ThemeProvider } from '@gravity-ui/uikit'
+import Header from './Header/Header'
 
 import './Wrapper.scss'
+import { AuthContext } from '@/app/lib/context/Auth'
+import { usePathname } from 'next/navigation'
+import { cancelAuth } from '@/app/actions/Users'
 
 const b = block('wrapper')
 
@@ -19,15 +23,24 @@ export type AppProps = {
 }
 
 export const Wrapper: React.FC<AppProps> = ({ children }) => {
-  const [theme, setTheme] = React.useState<Theme>(DEFAULT_THEME)
+  const auth = useContext(AuthContext)
+  const route = usePathname()
 
-  return (
-    <ThemeProvider theme={theme}>
-      <div className={b()}>
-        <div className={b('layout')}>
+  if (!auth.isAuth && route !== '/') {
+    cancelAuth()
+  } else {
+    return (
+      <ThemeProvider theme={DEFAULT_THEME}>
+        <div className={b()}>
+          {auth.isAuth && <Header availableOptions={auth.availableOptions} />}
           <div className={b('content')}>{children}</div>
         </div>
-      </div>
-    </ThemeProvider>
-  )
+      </ThemeProvider>
+    )
+  }
+}
+
+export type AuthStatus = {
+  isAuth?: boolean
+  availableOptions?: string[]
 }

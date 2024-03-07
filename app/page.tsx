@@ -1,8 +1,9 @@
 import { Text } from '@gravity-ui/uikit'
-
-import block from 'bem-cn-lite'
 import '@/app/styles.scss'
+
 import { Metadata } from 'next'
+import AuthForm from '@/app/components/forms/AuthForm'
+import block from 'bem-cn-lite'
 
 export const metadata: Metadata = {
   title: 'Авторизация в админке',
@@ -17,14 +18,14 @@ export default function Home() {
       <div className={b('landing-section')}>
         <div className={b('landing-section', { text: true })}>
           <h1>
-            <Text variant="display-3">Разработка WEB-приложений</Text>
+            <Text variant="display-3">Авторизация</Text>
           </h1>
-
           <p>
-            <Text variant="subheader-2">
-              Создаю Frontend и Backend под бизнес-процессы клиентов.
+            <Text variant="body-3">
+              Получите данные для входа у администратора
             </Text>
           </p>
+          <AuthForm />
         </div>
       </div>
     </div>

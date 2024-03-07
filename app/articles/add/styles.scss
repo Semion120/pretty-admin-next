@@ -1,0 +1,34 @@
+$block: '.article-add';
+
+#{$block} {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .user-inputs-mb {
+    margin-bottom: 10px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    width: 100%;
+
+    @media screen and (max-width: 500px) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__text-inputs {
+    align-items: flex-start;
+    margin-top: 30px;
+  }
+
+  &__action-button {
+    margin-top: 20px;
+  }
+}

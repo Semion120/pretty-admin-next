@@ -1,0 +1,73 @@
+$block: '.header';
+$mobilePoint: 565px;
+
+#{$block} {
+  width: 100%;
+  border-bottom: 0.5px solid rgba(52, 52, 52, 0.262);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  @media screen and (max-width: $mobilePoint) {
+    justify-content: space-between;
+  }
+
+  &__logo {
+    $logoSize: 50px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    &-image {
+      display: block;
+      width: $logoSize;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: $logoSize;
+      background-image: url('/logo.svg');
+    }
+  }
+
+  &__navs {
+    .nav {
+      margin: 0 15px;
+    }
+    @media screen and (max-width: $mobilePoint) {
+      display: none;
+    }
+  }
+
+  &__hamburger {
+    display: none;
+    @media screen and (max-width: $mobilePoint) {
+      display: block;
+    }
+  }
+
+  &__hamburger-content {
+    display: none;
+    &_open {
+      display: block;
+      position: absolute;
+      z-index: 20;
+      top: 101px;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+    }
+    &_navs {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      .nav {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

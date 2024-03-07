@@ -1,0 +1,17 @@
+$block: '.auth-form';
+
+#{$block} {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--g-color-base-brand);
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 200px;
+
+  &__input {
+    margin-bottom: 10px;
+  }
+}

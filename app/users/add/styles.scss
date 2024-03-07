@@ -1,0 +1,12 @@
+$block: '.users-add';
+
+#{$block} {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .user-inputs-mb {
+    margin-bottom: 10px;
+  }
+}

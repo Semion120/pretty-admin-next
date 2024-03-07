@@ -1,0 +1,12 @@
+$block: '.dashboard-page';
+
+#{$block} {
+  margin-top: 20px;
+
+  width: 100%;
+  height: auto;
+  display: flex !important;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
