@@ -1,7 +1,7 @@
 'use client'
 
 import { Card, Text } from '@gravity-ui/uikit'
-import { PhotosDispatchContext } from '../PhotosReduser'
+import { PhotosDispatchContext } from '../lib/PhotosReduser'
 import { MutableRefObject, useContext, useRef } from 'react'
 import { b } from '../PhotoInput'
 

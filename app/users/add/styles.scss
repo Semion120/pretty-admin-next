@@ -9,4 +9,13 @@ $block: '.users-add';
   .user-inputs-mb {
     margin-bottom: 10px;
   }
+
+  &__action-button {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }

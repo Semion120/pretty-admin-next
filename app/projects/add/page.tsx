@@ -130,15 +130,11 @@ export default function AddProject() {
             console.log(val)
           }}
         />
-
-        <Button
-          type="button"
-          view="action"
-          onClick={CreateProject}
-          className={b('action-button')}
-        >
-          Создать проект
-        </Button>
+        <div className={b('action-button')}>
+          <Button type="button" view="action" onClick={CreateProject}>
+            Создать проект
+          </Button>
+        </div>
       </form>
     </div>
   )

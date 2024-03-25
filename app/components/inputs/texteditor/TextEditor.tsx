@@ -49,8 +49,6 @@ export default function TextEditor({
   )
 }
 
-type EditorUpdate = CustomEvent<any>[] | CustomEvent<any>
-
 type Props = {
   blocks?: OutputData
   onUpdate?: (data: any) => void

@@ -101,15 +101,11 @@ export default function AddArticle() {
             className="user-inputs-mb"
           />
         </div>
-
-        <Button
-          type="button"
-          view="action"
-          onClick={CreateArtcle}
-          className={b('action-button')}
-        >
-          Создать статью
-        </Button>
+        <div className={b('action-button')}>
+          <Button type="button" view="action" onClick={CreateArtcle}>
+            Создать статью
+          </Button>
+        </div>
       </form>
     </div>
   )

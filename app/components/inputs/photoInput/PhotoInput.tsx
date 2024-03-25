@@ -1,7 +1,6 @@
 'use client'
 import './PhotoInput.scss'
 import { Switch, Text } from '@gravity-ui/uikit'
-
 import block from 'bem-cn-lite'
 import { useReducer, useState } from 'react'
 import {
@@ -9,7 +8,7 @@ import {
   PhotosDispatchContext,
   Photo,
   PhotosDataType,
-} from './PhotosReduser'
+} from './lib/PhotosReduser'
 import { DragAndDrop } from './components'
 import makeId from './lib/id'
 

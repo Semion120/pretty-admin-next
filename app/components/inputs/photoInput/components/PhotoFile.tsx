@@ -19,7 +19,7 @@ import { OrderedPhoto } from './DragAndDropSort/DragAndDropSort'
 import { Button, Card, Icon, Modal, Text } from '@gravity-ui/uikit'
 import { b } from '../PhotoInput'
 import sortCardsByOrder from '../lib/sorting'
-import { Photo, PhotosDispatchContext } from '../PhotosReduser'
+import { Photo, PhotosDispatchContext } from '../lib/PhotosReduser'
 
 export function PhotoFile({ photo }: PhotoFileProps) {
   const [changeFile, setChangeFile] = useState<Photo | undefined>(undefined)

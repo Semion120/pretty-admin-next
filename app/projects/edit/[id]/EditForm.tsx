@@ -118,9 +118,11 @@ export default function EditProjectForm({
           ltValue={project.dateUpdatePrice}
         />
 
-        <Button type="button" view="action" onClick={EditProject}>
-          Редактировать
-        </Button>
+        <div className="action-button">
+          <Button type="button" view="action" onClick={EditProject}>
+            Редактировать
+          </Button>
+        </div>
       </form>
     </>
   )

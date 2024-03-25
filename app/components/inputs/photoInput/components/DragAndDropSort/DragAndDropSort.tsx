@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Photo } from '../../PhotosReduser'
+import { Photo } from '../../lib/PhotosReduser'
 import { b } from '../../PhotoInput'
 import FileInput from '../FileInput'
 import './DragStatus.scss'

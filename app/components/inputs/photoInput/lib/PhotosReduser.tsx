@@ -1,8 +1,8 @@
 'use client'
 
 import { Context, Dispatch, createContext } from 'react'
-import makeId from './lib/id'
-import { OrderedPhoto } from './components/DragAndDropSort/DragAndDropSort'
+import makeId from './id'
+import { OrderedPhoto } from '../components/DragAndDropSort/DragAndDropSort'
 
 export const PhotosDispatchContext: Context<Dispatch<ActionType>> =
   createContext((value: ActionType) => {})

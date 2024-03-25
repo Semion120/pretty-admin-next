@@ -155,9 +155,11 @@ export default function AddUser() {
             className="user-inputs-mb"
           />
         )}
-        <Button type="button" view="action" onClick={CreateUser}>
-          Создать нового
-        </Button>
+        <div className={b('action-button')}>
+          <Button type="button" view="action" onClick={CreateUser}>
+            Создать нового
+          </Button>
+        </div>
       </form>
     </div>
   )

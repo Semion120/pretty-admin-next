@@ -1,4 +1,4 @@
-import AvailableOptions from '@/data/users/availableOptions'
+import AvailableOptions from '@/data/availableOptions'
 import { Context, Dispatch, createContext } from 'react'
 
 export const defaultAuthState: InitData = {

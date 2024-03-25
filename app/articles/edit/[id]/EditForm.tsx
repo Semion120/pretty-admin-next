@@ -104,14 +104,11 @@ export default function EditArticleForm({
           />
         </div>
 
-        <Button
-          type="button"
-          view="action"
-          onClick={EditArticle}
-          className={b('action-button')}
-        >
-          Редактировать
-        </Button>
+        <div className={b('action-button')}>
+          <Button type="button" view="action" onClick={EditArticle}>
+            Редактировать
+          </Button>
+        </div>
       </form>
     </>
   )

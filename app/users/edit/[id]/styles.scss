@@ -12,4 +12,12 @@ $block: '.user-edit';
   .big-error {
     margin-bottom: 15px;
   }
+  .action-button {
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }

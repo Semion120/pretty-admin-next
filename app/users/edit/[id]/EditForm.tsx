@@ -154,9 +154,11 @@ export default function EditUserForm({ oldUser }: { oldUser: User }) {
             defaultValue={defaultCreater}
           />
         )}
-        <Button type="button" view="action" onClick={EditUser}>
-          Редактировать
-        </Button>
+        <div className="action-button">
+          <Button type="button" view="action" onClick={EditUser}>
+            Редактировать
+          </Button>
+        </div>
       </form>
     </>
   )

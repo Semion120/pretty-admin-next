@@ -1,4 +1,4 @@
-import { Photo } from '../PhotosReduser'
+import { Photo } from './PhotosReduser'
 import { OrderedPhoto } from '../components/DragAndDropSort/DragAndDropSort'
 
 export default function sortCardsByOrder(cards: OrderedPhoto[]) {
