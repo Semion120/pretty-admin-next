@@ -58,6 +58,9 @@ $mobilePoint: 565px;
       width: 100%;
       height: 100%;
       background-color: white;
+      @media screen and (max-width: 500px) {
+        top: 71px;
+      }
     }
     &_navs {
       display: flex;

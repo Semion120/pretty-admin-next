@@ -13,7 +13,8 @@ import './style.scss'
 import block from 'bem-cn-lite'
 import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import { Article } from '@/data/articles/article'
-import { fetchArticles } from '@/app/actions/Articles'
+import { deleteArticleAction, fetchArticles } from '@/app/actions/Articles'
+import { useRouter } from 'next/navigation'
 
 const b = block('article-card')
 
@@ -116,6 +117,9 @@ export default function ArticleCard() {
                     shortName={el.shortName}
                     editDate={el.editDate}
                     createDate={el.createDate}
+                    articles={articles}
+                    setArticles={setArticles}
+                    id={el._id}
                   />
                 )
               })
@@ -136,9 +140,34 @@ export default function ArticleCard() {
   )
 }
 
-function OneArticleCard({ shortName, editDate, createDate }: ArticleCardProps) {
+function OneArticleCard({
+  shortName,
+  editDate,
+  createDate,
+  articles,
+  setArticles,
+  id,
+}: ArticleCardProps) {
   const editDateNorm = new Date(editDate).toLocaleDateString('ru-RU')
   const createDateNorm = new Date(createDate).toLocaleDateString('ru-RU')
+  const router = useRouter()
+
+  function deleteArticleFromList(
+    id: string,
+    setProjects: Dispatch<SetStateAction<Article[] | undefined>>
+  ) {
+    deleteArticleAction(id)
+    const newArticlesList = articles.filter((el) => {
+      return el._id !== id
+    })
+    setProjects(newArticlesList)
+  }
+  function editArticle(id: string) {
+    router.push('/articles/edit/' + id)
+  }
+  const bindedDelete = deleteArticleFromList.bind(null, id, setArticles)
+  const bindedEdit = editArticle.bind(null, id)
+
   return (
     <div className={b('table', { article: true })}>
       <div className="fields">
@@ -156,12 +185,12 @@ function OneArticleCard({ shortName, editDate, createDate }: ArticleCardProps) {
         items={[
           {
             iconStart: <Icon size={16} data={Pencil} />,
-            action: () => console.log('Изменить'),
+            action: () => bindedEdit(),
             text: 'Изменить',
           },
           {
             iconStart: <Icon size={16} data={TrashBin} />,
-            action: () => console.log('Удалить'),
+            action: () => bindedDelete(),
             text: 'Удалить',
             theme: 'danger',
           },
@@ -175,6 +204,9 @@ type ArticleCardProps = {
   shortName: string
   createDate: string
   editDate: string
+  articles: Article[]
+  setArticles: Dispatch<SetStateAction<Article[] | undefined>>
+  id: string
 }
 
 function filterObjects(

@@ -5,6 +5,7 @@ $block: '.editorjs-main';
   padding: 20px 10px;
   border-radius: 10px;
   width: 100%;
+  box-sizing: border-box;
 
   &_validation_invalid {
     border: 1px solid var(--g-color-line-danger);

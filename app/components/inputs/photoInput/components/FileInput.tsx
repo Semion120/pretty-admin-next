@@ -21,6 +21,7 @@ export default function FileInput({ id, title }: FileInputProps) {
         ref={inputRef}
         type="file"
         multiple
+        accept="image/png, image/jpeg"
         onChange={(e) => {
           const files = e.target.files
 

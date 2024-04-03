@@ -23,7 +23,6 @@ import {
 import { AuthContext, InitData } from '@/app/lib/context/Auth'
 import { useRouter } from 'next/navigation'
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime'
-import { revalidatePath } from 'next/cache'
 
 const b = block('user-card')
 

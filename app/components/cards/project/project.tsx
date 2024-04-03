@@ -13,7 +13,8 @@ import './style.scss'
 import block from 'bem-cn-lite'
 import { Project } from '@/data/projects/project'
 import { Dispatch, SetStateAction, useEffect, useState } from 'react'
-import { fetchProjects } from '@/app/actions/Projects'
+import { deleteProjectAction, fetchProjects } from '@/app/actions/Projects'
+import { useRouter } from 'next/navigation'
 
 const b = block('project-card')
 
@@ -56,7 +57,7 @@ export default function ProjectCard() {
     <Card theme="normal" type="container" view="outlined" className={b()}>
       <h2>
         <Text variant="subheader-3">Проекты</Text>
-        {projects && projects.length >= 5 ? (
+        {projects && projects.length > 5 ? (
           <Switch
             size="m"
             content="Показать все"
@@ -116,6 +117,9 @@ export default function ProjectCard() {
                     name={el.name}
                     price={el.price}
                     dateUpdatePrice={el.dateUpdatePrice}
+                    id={el._id}
+                    projects={projects}
+                    setProjects={setProjects}
                   />
                 )
               })
@@ -136,9 +140,34 @@ export default function ProjectCard() {
   )
 }
 
-function OneProjectCard({ name, price, dateUpdatePrice }: ProjectCardProps) {
+function OneProjectCard({
+  name,
+  price,
+  dateUpdatePrice,
+  id,
+  projects,
+  setProjects,
+}: ProjectCardProps) {
   const makedPrice = price / 1000000
   const stringPrice = makedPrice.toFixed(3) + ' млн.'
+  const router = useRouter()
+
+  function deleteUserFromList(
+    id: string,
+    setProjects: Dispatch<SetStateAction<Project[] | undefined>>
+  ) {
+    deleteProjectAction(id)
+    const newProjectsList = projects.filter((el) => {
+      return el._id !== id
+    })
+    setProjects(newProjectsList)
+  }
+  function editUser(id: string) {
+    router.push('/projects/edit/' + id)
+  }
+  const bindedDelete = deleteUserFromList.bind(null, id, setProjects)
+  const bindedEdit = editUser.bind(null, id)
+
   return (
     <div className={b('table', { project: true })}>
       <div className="fields">
@@ -156,12 +185,12 @@ function OneProjectCard({ name, price, dateUpdatePrice }: ProjectCardProps) {
         items={[
           {
             iconStart: <Icon size={16} data={Pencil} />,
-            action: () => console.log('Изменить'),
+            action: () => bindedEdit(),
             text: 'Изменить',
           },
           {
             iconStart: <Icon size={16} data={TrashBin} />,
-            action: () => console.log('Удалить'),
+            action: () => bindedDelete(),
             text: 'Удалить',
             theme: 'danger',
           },
@@ -175,6 +204,9 @@ type ProjectCardProps = {
   name: string
   price: number
   dateUpdatePrice: string
+  id: string
+  projects: Project[]
+  setProjects: Dispatch<SetStateAction<Project[] | undefined>>
 }
 
 function filterProjects(
