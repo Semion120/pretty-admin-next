@@ -1,7 +1,8 @@
 import { readFileSync, writeFileSync } from 'fs'
 import { Article } from './article'
 
-const pathToFile = '/home/mrbabak/pretty-admin-next/data/articles/data.txt'
+const folder = __dirname.replace(/\.next.*/, '')
+const pathToFile = folder + 'data/articles/data.txt'
 
 export async function getArticle(id: string) {
   const articles = JSON.parse(

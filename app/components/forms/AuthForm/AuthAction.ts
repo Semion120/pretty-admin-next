@@ -2,8 +2,6 @@
 
 import { checkAndUpdateUser } from '@/app/actions/Users'
 import { InitData } from '@/app/lib/context/Auth'
-import { revalidatePath } from 'next/cache'
-import { redirect } from 'next/navigation'
 
 export default async function AuthAction(
   currentState: AuthFormState,

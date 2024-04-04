@@ -1,7 +1,8 @@
 import projectBase, { Project } from './project'
 import { writeFileSync, readFileSync } from 'fs'
 
-const pathToFile = '/home/mrbabak/pretty-admin-next/data/projects/data.txt'
+const folder = __dirname.replace(/\.next.*/, '')
+const pathToFile = folder + 'data/projects/data.txt'
 
 export async function getProject(id: string) {
   const projects = JSON.parse(

@@ -1,7 +1,8 @@
 import { User } from './member'
 import { writeFileSync, readFileSync } from 'fs'
 
-const pathToFile = '/home/mrbabak/pretty-admin-next/data/users/data.txt'
+const folder = __dirname.replace(/\.next.*/, '')
+const pathToFile = folder + 'data/users/data.txt'
 
 export function getUser(login: string) {
   const users = JSON.parse(
