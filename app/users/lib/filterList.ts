@@ -1,5 +1,9 @@
 import { User } from '@/data/users/member'
-import { UserFilter } from '../page'
+
+type UserFilter = {
+  searchString: string
+  role: 'all' | User['role']
+}
 
 export default function filterList(
   userLogin: string,

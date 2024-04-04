@@ -3,6 +3,11 @@
 import { addArticleAction } from '@/app/actions/Articles'
 import { Article } from '@/data/articles/article'
 
+export type Action = {
+  type: string
+  payload: object
+}
+
 export default async function AddAction(
   currentState: AddArticleState,
   payload: Article

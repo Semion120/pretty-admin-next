@@ -2,7 +2,6 @@
 
 import { addProjectAction } from '@/app/actions/Projects'
 import { Project } from '@/data/projects/project'
-import { User } from '@/data/users/member'
 
 export default async function AddAction(
   currentState: AddProjectState,
