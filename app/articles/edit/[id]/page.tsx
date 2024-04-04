@@ -6,7 +6,7 @@ import { fetchArticleById } from '@/app/actions/Articles'
 import EditArticleForm from './EditForm'
 import { Suspense } from 'react'
 
-export const b = block('article-edit')
+const b = block('article-edit')
 
 export default async function ArticleEdit({
   params,

@@ -8,7 +8,9 @@ import { TextArea } from '@/app/components/inputs/textarea'
 import { Article } from '@/data/articles/article'
 import EditArticleAction from './EditArticleAction'
 import { TextEditor } from '@/app/components/inputs/texteditor'
-import { b } from './page'
+import block from 'bem-cn-lite'
+
+const b = block('article-edit')
 
 export default function EditArticleForm({
   oldArticle,
