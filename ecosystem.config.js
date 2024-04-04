@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'semion-dev',
+      name: 'pretty-admin-demo',
       script: 'npm run build && npm run start',
     },
   ],
